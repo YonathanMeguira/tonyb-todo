@@ -1,0 +1,35 @@
+<div class="d-flex flex-column">
+    <div class="d-flex flex-row justify-content-end mb-4">
+        <button nbButton hero status="primary" (click)="addTodo()">Add Todo</button>
+    </div>
+    <table class="table" *ngIf="list.length; else placeholder">
+        <thead>
+            <tr>
+                <th scope="col">Task</th>
+                <th scope="col">Assigned To</th>
+                <th scope="col">Due At</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let todo of list">
+                <td>{{todo.task}}</td>
+                <td>{{todo.assignedTo}}</td>
+                <td>{{todo.dueAt}}</td>
+                <td>
+                    <div class="d-flex flex-row actions items-center">
+                        <button nbButton ghost status="success" (click)="edit(todo)">
+                            <nb-icon icon="edit"></nb-icon>
+                        </button>
+                        <button nbButton ghost status="danger" (click)="delete(todo.id)">
+                            <nb-icon icon="trash-outline"></nb-icon>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <ng-template #placeholder>
+        Sorry, you don't have any todos
+    </ng-template>
+</div>

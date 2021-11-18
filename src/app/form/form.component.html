@@ -1,0 +1,10 @@
+<nb-card class="todo-form">
+    <nb-card-body>
+        <form [formGroup]="form" class="d-flex flex-column">
+            <input type="text" nbInput placeholder="task" formControlName="task">
+            <input type="text" nbInput placeholder="Assigned to" class="my-3" formControlName="assignedTo">
+            <input type="text" nbInput placeholder="Due At" formControlName="dueAt">
+        </form>
+        <button nbButton status="success" class="mt-3" (click)="save()">Save</button>
+    </nb-card-body>
+</nb-card>

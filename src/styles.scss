@@ -1,0 +1,13 @@
+@import "themes";
+
+@import "~@nebular/theme/styles/globals";
+
+@include nb-install() {
+  @include nb-theme-global();
+}
+
+* {
+  font-family: "Montserrat", sans-serif !important;
+  font-family: "Permanent Marker", cursive !important;
+}
+/* You can add global styles to this file, and also import other style files */
